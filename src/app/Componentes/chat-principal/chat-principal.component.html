@@ -1,1 +1,100 @@
-<p>chat-principal works!</p>
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card chat-app m-0">
+                <div id="plist" class="people-list">
+                    <div class="input-group">
+                        <div class="input-group-prepend text-center">
+                            <span class="title">Angie's and Douglas's Project</span>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled chat-list mt-2 mb-0">
+                        <li class="clearfix active">
+                            <img src="https://i.pinimg.com/originals/e8/5c/a0/e85ca04eb369985e4639d1b76f2d5bec.jpg" alt="avatar">
+                            <div class="about">
+                                <div class="name">ChatBot</div>
+                                <div class="status"> <i class="fa fa-circle online"></i> online </div>                                            
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img src="https://i.pinimg.com/564x/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg" alt="avatar">
+                            <div class="about">
+                                <div class="name">Group Room #1</div>
+                                <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img src="https://bestprofilepictures.com/wp-content/uploads/2021/04/Cool-Pic.jpg" alt="avatar">
+                            <div class="about">
+                                <div class="name">Group Room #2</div>
+                                <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                            </div>
+                        </li>                                    
+                        <li class="clearfix">
+                            <img src="https://techcommunity.microsoft.com/t5/image/serverpage/image-id/217078i525F6A9EF292601F/image-size/large?v=v2&px=999" alt="avatar">
+                            <div class="about">
+                                <div class="name">Group Room #3</div>
+                                <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img src="https://bestprofilepictures.com/wp-content/uploads/2021/04/Cool-Profile-Picture.jpg" alt="avatar">
+                            <div class="about">
+                                <div class="name">Group Room #4</div>
+                                <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="chat"  #container>
+                    <div class="chat-header clearfix">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <a href="" data-toggle="modal" data-target="#view_info">
+                                    <img src="https://i.pinimg.com/originals/e8/5c/a0/e85ca04eb369985e4639d1b76f2d5bec.jpg" alt="avatar">
+                                </a>
+                                <div class="chat-about">
+                                    <h6 class="m-b-0">ChatBot-Prototype-doug-engels</h6>
+                                    <small>Last seen: Online</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-history" #container>
+                        <ul class="m-b-0">
+                            <div class="" *ngFor="let item of preguntasChat; index as i;">
+                                <!--USUARIO-->
+                                <div class="" *ngIf="item.responsable == 'usuario'">
+                                    <li class="clearfix">
+                                        <div class="message-data text-right">
+                                            <span class="message-data-time">{{item.hora}}</span>
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                        </div>
+                                        <div class="message other-message float-right">{{item.mensaje}}</div>
+                                    </li>
+                                </div>
+                                <!--BOT-->
+                                <div class="" *ngIf="item.responsable == 'bot'" style="white-space: pre-line">
+                                    <li class="clearfix">
+                                        <div class="message-data">
+                                            <span class="message-data-time">{{item.hora}}</span>
+                                        </div>
+                                        <div class="message my-message">{{item.mensaje}}</div>                                    
+                                    </li>
+                                </div>
+                            </div>                             
+                        </ul>
+                    </div>
+                    <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                                <button class="input-group-text" (click)="enviar()"><i class="fa fa-send"></i></button>
+                            </div>
+                            <input type="text" class="form-control" [(ngModel)]="mensajeEscribiendo" (ngModelChange)="mensajeEscribiendo = $event" placeholder="Enter text here...">                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

@@ -7,7 +7,8 @@ import { ChatPrincipalComponent } from './Componentes/chat-principal/chat-princi
 import { LoginComponent } from './Componentes/login/login.component';
 import { SideChatComponent } from './Componentes/side-chat/side-chat.component';
 import { ListaContactosComponent } from './Componentes/lista-contactos/lista-contactos.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
