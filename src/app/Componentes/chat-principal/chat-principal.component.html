@@ -74,12 +74,31 @@
                                     </li>
                                 </div>
                                 <!--BOT-->
-                                <div class="" *ngIf="item.responsable == 'bot'" style="white-space: pre-line">
+                                <!--
+                                <div class="" *ngIf="item.responsable == 'bot' && item.imagen == ''" style="white-space: pre-line">
                                     <li class="clearfix">
                                         <div class="message-data">
                                             <span class="message-data-time">{{item.hora}}</span>
                                         </div>
                                         <div class="message my-message">{{item.mensaje}}</div>                                    
+                                    </li>
+                                </div>
+                                -->
+                                <!--BOT imagenes-->
+                                <div class="" *ngIf="item.responsable == 'bot'" style="white-space: pre-line">
+                                    <li class="clearfix">
+                                        <div class="message-data">
+                                            <span class="message-data-time">{{item.hora}}</span>
+                                        </div>
+                                        <div class="message my-message" *ngIf="item.mensaje != ''">{{item.mensaje}}</div>
+                                        <div class="" *ngIf="item.mensaje != ''">
+                                            <br>
+                                        </div>
+                                        <div class="message my-message" *ngIf="item.imagen != ''"><img src="{{item.imagen}}" alt=""></div>
+                                        <div class="" *ngIf="item.imagen != ''">
+                                            <br>
+                                        </div>
+                                        <div class="message my-message" *ngIf="item.link != ''"><a href="{{item.link}}">{{item.link}}</a></div>                                
                                     </li>
                                 </div>
                             </div>                             
@@ -90,7 +109,7 @@
                             <div class="input-group-prepend">
                                 <button class="input-group-text" (click)="enviar()"><i class="fa fa-send"></i></button>
                             </div>
-                            <input type="text" class="form-control" [(ngModel)]="mensajeEscribiendo" (ngModelChange)="mensajeEscribiendo = $event" placeholder="Enter text here...">                                    
+                            <input type="text" class="form-control" [(ngModel)]="mensajeEscribiendo" (ngModelChange)="mensajeEscribiendo = $event" placeholder="Enter text here..." (keyup.enter)="enviar()">                                    
                         </div>
                     </div>
                 </div>

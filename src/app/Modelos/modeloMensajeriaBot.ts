@@ -4,5 +4,6 @@ export class modeloMensajeriaBot{
     hora: String;
     responsable: String;
     mensaje: String;
-
+    imagen:String = "";
+    link:String;
 }
