@@ -56,7 +56,7 @@ export class ChatPrincipalComponent implements OnInit {
     this.respuestasBot.push({pregunta:"Do you have the number of Nata?",respuesta:"Of course I can look: +573137315855"});
     this.respuestasBot.push({pregunta:"Do you have the number of Dany?",respuesta:"Of course I can look: +573195629418"});
     this.respuestasBot.push({pregunta:"Do you have the number of Ross?",respuesta:"Of course I can look: +573154084911"});
-    this.respuestasBot.push({pregunta:"Do you have the number of Ross?",respuesta:"Of course I can look: +573127730676"});
+    this.respuestasBot.push({pregunta:"Do you have the number of Angie?",respuesta:"Of course I can look: +573127730676"});
     
     //=================================PREGUNTAS DE UBICACION=============================================
     this.respuestasBot.push({pregunta:"Do you know a mall near to my position?",respuesta:"location"});
